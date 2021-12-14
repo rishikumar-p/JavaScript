@@ -2,36 +2,34 @@
 <head>
     <title>Storage Assignment</title>
 </head>
-<body onload = "message()">
-    <button style="padding: 2px; margin: 5px; background-color: aqua; font-size: large;">Increase</button>
-    <h3>Local Score: </h3>
-    <h3>Session Score: </h3>
+<body>
+    <div style="border: 2px; border-color: black; padding: 10px; margin: 10px; background-color:rgb(52, 197, 202); align-items: center; margin-left: 40%; margin-right: 40%; margin-top: 50px; border-color: black;">
+        <button style="padding: 5px; margin: 5px; background-color: black;color: blanchedalmond; font-size: 25px; margin-left: 35%;">Increase</button>
+        <h2 style="margin-left: 30%;">Local Score: </h2>
+        <h2 style="margin-left: 30%;" >Session Score: </h2>
+    </div>
+    
     <script>
         const button = document.querySelector('button');
         const body = document.querySelector('body');
-        const message = document.querySelectorAll('h3');
+        const message = document.querySelectorAll('h2');
         
         window.onload = () => {
-            if(sessionStorage.getItem('count') != null){
-                message[1].textContent="Session Score: "+sessionStorage.getItem('count');
-            }
-            else{
+            if (sessionStorage.getItem('count') != null)
+                message[1].textContent="Session Score: " + sessionStorage.getItem('count');
+            else 
                 message[1].textContent="Session Score: " + 0;
-            }
-            if(localStorage.getItem('count')!=null){
-                message[0].textContent="Local Score: "+localStorage.getItem('count');
-            }
-            else{
+            if (localStorage.getItem('count') != null)
+                message[0].textContent="Local Score: " + localStorage.getItem('count');
+            else 
                 message[0].textContent="Local Score: " + 0;
-            }
         }
 
-        button.onclick=()=>{
-            localStorage.setItem("count", JSON.parse(localStorage.getItem("count"))+1);
-            sessionStorage.setItem("count", JSON.parse(sessionStorage.getItem("count"))+1);
-            
-            message[0].textContent = "Local Score: "+ localStorage.getItem('count');
-            message[1].textContent = "Session Score: "+ sessionStorage.getItem('count');
+        button.onclick = () => {
+            localStorage.setItem("count", JSON.parse(localStorage.getItem("count")) + 1);
+            sessionStorage.setItem("count", JSON.parse(sessionStorage.getItem("count")) + 1);
+            message[0].textContent = "Local Score: " + localStorage.getItem('count');
+            message[1].textContent = "Session Score: " + sessionStorage.getItem('count');
         }
     </script>
 </body>
