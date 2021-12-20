@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Restaurant App</title>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" type="text/css" href="style.css">
+   </head>
+   <body>
+       <div id="maincontainer">
+            <div class="leftsplit">
+                <div class="tables-header">
+                    <h1 style="text-align: center;">Tables</h1>
+                    <input type="text" class="search" id="searchtable" placeholder="Search Table" title="Enter Table Number to Search">
+                </div>
+                <div class="table" id="tableContainer">
+                    
+                </div>
+
+            </div>
+
+            <div class="rightsplit">
+                <div class="menu-header">
+                    <h1 style="text-align: center;">Menu</h1>
+                    <input type="text" class="search" id="searchmenu" placeholder="Search Menu... by Course, by Food" title="Enter Item to Search">
+                </div>
+                <div class="menu" id="menuContainer"></div>
+            </div>
+        </div>
+
+        <div id="orderDetails">
+            <div class="header">
+                <span class="detailsclose">&times;</span>
+                <h2 id="orderDetailsHeader">Table-1 | Order Details</h2>
+            </div> 
+            <div class="details">
+                <table id="orderedItems">
+                    <tbody id="orderedItemsTableBody">
+                        <tr class="orderdItemsHeader">
+                            <th id="sno">S.No</th>
+                            <th id="itemname">Item Name</th>
+                            <th id="price">Price</th>
+                            <th id="quantity">Number Of Servings</th>
+                            <th id="delete"></th>
+                            <th id= "itemId" class="hidden"></th>
+                        </tr>
+                    </tbody>
+                    
+                </table>
+                <h2 id="orderDetailsBill">Total :</h2>
+            </div>
+            <button id="generatebill">Close Session(Generate Bill)</button>
+        </div>
+
+        <script src="./data.js"></script>
+        <script src="./loadData.js"></script>
+        <script src="./search.js"></script>
+   </body>
+</html>
